@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdministradorTareas.MVVM.Views.PagSecView"
+             Title="Página Secundaria">
+    <VerticalStackLayout>
+
+        <CollectionView x:Name="ListaSelec"
+            SelectionMode="Single"
+            ItemsSource="{Binding Categoria}">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding NombreCategoria}"></Label>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Label Text="Introduce el nombre de la tarea: "></Label>
+
+        <Entry Placeholder="Tarea 1..."
+               Text=""
+               x:Name="CuadroTexto">
+
+        </Entry>
+            
+    </VerticalStackLayout>
+</ContentPage>
