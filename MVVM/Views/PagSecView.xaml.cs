@@ -5,18 +5,21 @@ namespace AdministradorTareas.MVVM.Views;
 
 public partial class PagSecView : ContentPage
 {
-	private readonly PagPrincViewModel viewModel;
+	private PagPrincViewModel ViewModel { get; set; }
 
 	public PagSecView()
 	{
 		InitializeComponent();
+		ViewModel = new PagPrincViewModel();
+		BindingContext = ViewModel;
 	}
 
 	public PagSecView(PagPrincViewModel vm)
 	{
 		InitializeComponent();
-		BindingContext = vm;
-	}
+        ViewModel = new PagPrincViewModel();
+        BindingContext = ViewModel;
+    }
 
 	public PagSecView(string dato)
 	{
@@ -30,31 +33,22 @@ public partial class PagSecView : ContentPage
         string nombreTarea = CuadroTexto.Text;
 
         int sigId = 1;
-		if (viewModel.Tareas.Any())
+		if (ViewModel.Tareas.Any())
 		{
-			sigId = viewModel.Tareas.Max(t => t.IDTarea) + 1;
+			sigId = ViewModel.Tareas.Max(t => t.IDTarea) + 1;
 		}
 
 		var nuevaTarea = new Tarea(sigId, nombreTarea, categoriaSelec);
 
 
 
+        //string nombreTarea = CuadroTexto.Text;
 
-
-
-
-
-
-
-
-
-
-
-
-        string nombreTarea = CuadroTexto.Text;
-
-
-
-        vm.AnadirTarea(new Tarea(3, nombreTarea, );
+        //vm.AnadirTarea(new Tarea(3, nombreTarea, );
     }
+
+	public void ListaSelec_SelectionChanged(object sender, EventArgs e)
+	{
+
+	}
 }

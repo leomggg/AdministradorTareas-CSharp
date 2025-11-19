@@ -11,6 +11,8 @@
 
         public int CategoriaID => CategoriaAsoc?.IDCategoria ?? 0;
 
+        public Tarea() { }
+
         public Tarea(int iDTarea, string nombreTarea, Categoria categoriaSelec)
         {
             IDTarea = iDTarea;
