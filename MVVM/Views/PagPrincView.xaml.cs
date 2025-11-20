@@ -14,9 +14,17 @@ public partial class PagPrincView : ContentPage
         BindingContext = vm;
     }
 
-	public void Button_Clicked(object sender, EventArgs e)
+    //public PagPrincView(PagPrincViewModel viewm)
+    //{
+    //    InitializeComponent();
+    //    vm = viewm;
+    //    BindingContext = vm;
+    //}
+
+    public void Button_Clicked(object sender, EventArgs e)
 	{
 		texto = etiqueta.Text;
-		Navigation.PushAsync(new PagSecView(texto));
+		//TERMINAR METODO
+		Navigation.PushAsync(new PagSecView(vm));
 	}
 }

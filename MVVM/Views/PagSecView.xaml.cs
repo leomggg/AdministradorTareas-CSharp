@@ -5,29 +5,22 @@ namespace AdministradorTareas.MVVM.Views;
 
 public partial class PagSecView : ContentPage
 {
-	private PagPrincViewModel ViewModel { get; set; }
+	PagPrincViewModel ViewModel;
 
-	public PagSecView()
-	{
-		InitializeComponent();
-		ViewModel = new PagPrincViewModel();
-		BindingContext = ViewModel;
-	}
+	//public PagSecView()
+	//{
+	//	InitializeComponent();
+	//	ViewModel = new PagPrincViewModel();
+	//	BindingContext = ViewModel;
+	//}
 
 	public PagSecView(PagPrincViewModel vm)
 	{
 		InitializeComponent();
-        ViewModel = new PagPrincViewModel();
-        BindingContext = ViewModel;
+        BindingContext = vm;
     }
 
-	public PagSecView(string dato)
-	{
-		InitializeComponent();
-        BindingContext = dato;
-	}
-
-	public void Button_Clicked(object sender, EventArgs e)
+    public void Button_Clicked(object sender, EventArgs e)
 	{
 		Categoria categoriaSelec = ListaSelec.SelectedItem as Categoria;
         string nombreTarea = CuadroTexto.Text;
